@@ -1,13 +1,8 @@
 import React from "react";
+import Results from "./pages/Results";
 
 function App() {
-    return (
-        <div>
-            <p>
-                Hi
-            </p>
-        </div>
-    );
+    return <Results />;
 }
 
 export default App;
