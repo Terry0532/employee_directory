@@ -1,6 +1,7 @@
 import React from "react";
+import "./style.css";
 
-function List(props) {
+function Table(props) {
     return (
         <table>
             <tbody>
@@ -11,6 +12,7 @@ function List(props) {
                     <th>Email</th>
                     <th>DOB</th>
                 </tr>
+                {/* loop through the list and print them */}
                 {props.list.map(res => (
                     <tr key={res.id.value}>
                         <td><img src={res.picture.medium} alt={res.name.first}></img></td>
@@ -25,4 +27,4 @@ function List(props) {
     );
 }
 
-export default List;
+export default Table;

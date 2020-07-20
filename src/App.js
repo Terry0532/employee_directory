@@ -1,8 +1,8 @@
 import React from "react";
-import Results from "./pages/Results";
+import Employee from "./pages/Employee";
 
 function App() {
-    return <Results />;
+    return <Employee />;
 }
 
 export default App;

@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import List from "../components/list";
+import Table from "../components/table/table";
 
-class Results extends Component {
+class Employee extends Component {
     state = {
         list: []
     };
 
     componentDidMount() {
+        //get the list of employee and set it to list
         API.getList()
             .then(res => {
                 this.setState({ list: res.data.results });
@@ -18,10 +19,10 @@ class Results extends Component {
     render() {
         return (
             <div>
-                <List list={this.state.list} />
+                <Table list={this.state.list} />
             </div>
         );
     }
 }
 
-export default Results;
+export default Employee;
