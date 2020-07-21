@@ -6,7 +6,8 @@ import Search from "../components/search/search";
 class Employee extends Component {
     state = {
         list: [],
-        newList: []
+        newList: [],
+        switch: true
     };
 
     componentDidMount() {
@@ -37,12 +38,35 @@ class Employee extends Component {
         this.setState({ newList: newList });
     }
 
+    handleClick = () => {
+        if (this.state.switch) {
+            this.setState({ newList: this.state.newList.sort(this.compare), switch: false });
+        } else {
+            this.setState({ newList: this.state.newList.sort(this.compare).reverse(), switch: true });
+        }
+    }
+
+    compare(a, b) {
+        const employeeA = a.name.first.toLowerCase();
+        const employeeB = b.name.first.toLowerCase();
+        let comparison = 0;
+        if (employeeA > employeeB) {
+            comparison = 1;
+        } else if (employeeA < employeeB) {
+            comparison = -1;
+        }
+        return comparison;
+    }
+
     render() {
         return (
             <div>
                 <Search handleInputChange={this.handleInputChange} />
-                <br />
-                <Table list={this.state.newList} />
+                <p>Click name to sort.</p>
+                <Table
+                    list={this.state.newList}
+                    handleClick={this.handleClick}
+                />
             </div>
         );
     }

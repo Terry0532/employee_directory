@@ -3,7 +3,7 @@ import React from "react";
 function Search(props) {
     return (
         <div>
-            <input
+            Search: <input
                 type="text"
                 name="search"
                 placeholder="Employee Name"

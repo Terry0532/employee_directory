@@ -7,7 +7,7 @@ function Table(props) {
             <tbody>
                 <tr>
                     <th>Image</th>
-                    <th>Name</th>
+                    <th onClick={props.handleClick} id="click">Name</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>DOB</th>

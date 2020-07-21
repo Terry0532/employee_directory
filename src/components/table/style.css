@@ -12,3 +12,7 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+#click {
+    cursor: pointer;
+}
