@@ -6,9 +6,10 @@ function Search(props) {
             <input
                 type="text"
                 name="search"
-                placeholder="Employee name"
+                placeholder="Employee Name"
                 value={props.value}
                 onChange={props.handleInputChange}
+                autoComplete="off"
             />
         </div>
     )
